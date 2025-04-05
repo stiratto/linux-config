@@ -1,0 +1,4 @@
+#!/run/current-system/sw/bin/bash
+
+xset r rate 200 50
+
