@@ -2,11 +2,14 @@
 background = "#000000"
 
 [window]
-opacity = 1
+opacity = 0.95
 
 [window.padding]
 x = 20
 y = 5
 
 [font]
-normal = {family = "Hack Nerd Font"}
+# normal = {family = "Gohu GohuFont"}
+normal = {family = "Greybeard 15px"}
+# normal = {family = "Unifont"}
+

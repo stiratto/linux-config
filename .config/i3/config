@@ -18,6 +18,7 @@ set $color-dark-gray #555555
 set $color-black #000000
 set $color-white #e6e6e6
 set $mod Mod1
+set $SCRIPTS_HOME $HOME/.local/share/scripts
 
 # state                    border              background          text                 indicator
 client.focused             $color-dark-gray    $color-tertiary     $color-white         $color-medium-gray
@@ -45,8 +46,10 @@ mode "$mode_gaps" {
 
 }
 
-bindsym Control+Shift+Up exec perl -i -pe 's/(opacity = )([0-1]?.?[0-9]+)/if ($2<1) {$1.($2+0.025)} else {$1.$2}/e' ~/.config/alacritty/alacritty.toml
-bindsym Control+Shift+Down exec perl -i -pe 's/(opacity = )([0-1]?.?[0-9]+)/if ($2>0) {$1.($2-0.025)} else {$1.$2}/e' ~/.config/alacritty/alacritty.toml
+bindsym Control+Shift+Down exec perl -i -pe 's/(opacity = )([0-1]?.?[0-9]+)/if ($2>0) {$1.($2-0.025)} else {$1.$2}/e'  ~/.config/alacritty/alacritty.toml
+bindsym Control+Shift+Up exec perl -i -pe 's/(opacity = )([0-1]?.?\d+)/if ($2<1) {$1.($2+0.025)} else {$1.$2}/e' ~/.config/alacritty/alacritty.toml
+
+bindsym $mod+b exec "$SCRIPTS_HOME/pickcolor"
 
 
 
