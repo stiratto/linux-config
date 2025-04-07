@@ -15,6 +15,10 @@ for type, icon in pairs(signs) do
 end
 vim.opt.signcolumn = "yes:2" -- Esto añade espacio extra al signcolumn
 
+vim.cmd([[
+  highlight Cursor guifg=#ffffff guibg=#ffffff
+]])
+
 vim.cmd("set foldmethod=indent")
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1

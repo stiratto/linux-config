@@ -1,0 +1,12 @@
+[colors.primary]
+background = "#000000"
+
+[window]
+opacity = 1
+
+[window.padding]
+x = 20
+y = 5
+
+[font]
+normal = {family = "Hack Nerd Font"}
