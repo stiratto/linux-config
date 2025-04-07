@@ -68,13 +68,13 @@ exec --no-startup-id dex --autostart --environment i3
 exec_always feh --bg-scale ~/Downloads/3Lh5wpv\ -\ Imgur.png
 
 
-exec_always ~/.local/share/scripts/keyboardrate
+exec_always $SCRIPTS_HOME/keyboardrate
 exec_always xborders --config ~/.config/xborders/config.json
 
 
-bindsym Ctrl+H exec ~/.local/share/scripts/launch_polybar.sh
-bindsym Ctrl+K exec ~/.local/share/scripts/screenshotter
-bindsym Ctrl+J exec ~/.local/share/scripts/dmenurecord
+bindsym Ctrl+H exec $SCRIPTS_HOME/launch_polybar.sh
+bindsym Ctrl+K exec $SCRIPTS_HOME/screenshotter
+bindsym Ctrl+J exec $SCRIPTS_HOME/dmenurecord
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
@@ -89,8 +89,8 @@ exec --no-startup-id nm-applet
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id ~/.local/share/scripts/volume_up.sh 
-bindsym XF86AudioLowerVolume exec --no-startup-id ~/.local/share/scripts/volume_down.sh 
+bindsym XF86AudioRaiseVolume exec --no-startup-id $SCRIPTS_HOME/volume_up.sh 
+bindsym XF86AudioLowerVolume exec --no-startup-id $SCRIPTS_HOME/volume_down.sh 
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
