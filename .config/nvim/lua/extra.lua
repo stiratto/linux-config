@@ -13,7 +13,7 @@ local signs = { Error = " E", Warn = " W", Info = " I", Hint = " >" }
 for type, icon in pairs(signs) do
     vim.fn.sign_define("DiagnosticSign" .. type, { text = icon, texthl = type, numhl = type })
 end
-vim.opt.signcolumn = "yes:2" -- Esto añade espacio extra al signcolumn
+-- vim.opt.signcolumn = "yes:2" -- Esto añade espacio extra al signcolumn
 
 vim.cmd([[
   highlight Cursor guifg=#ffffff guibg=#ffffff
