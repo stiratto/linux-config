@@ -25,33 +25,33 @@ return {
          custom_codedark_theme[mode] = vim.deepcopy(custom_codedark_theme.normal)
       end
 
-      require('lualine').setup({
-         options = {
-            theme = custom_codedark_theme,
-            section_separators = '',
-            component_separators = ''
-         },
-         sections = {
-            lualine_a = {
-               function()
-                  return "👾"
-               end
-            },
-            lualine_b = { 'progress' },
-
-
-            lualine_x = {
-               'filetype'
-            },
-            lualine_y = {
-               function()
-                  return "stiratto"
-               end
-            },
-            lualine_z = {
-               'hostname'
-            }
-         }
-      })
+      -- require('lualine').setup({
+      --    options = {
+      --       theme = custom_codedark_theme,
+      --       section_separators = '',
+      --       component_separators = ''
+      --    },
+      --    sections = {
+      --       lualine_a = {
+      --          function()
+      --             return "👾"
+      --          end
+      --       },
+      --       lualine_b = { 'progress' },
+      --
+      --
+      --       lualine_x = {
+      --          'filetype'
+      --       },
+      --       lualine_y = {
+      --          function()
+      --             return "stiratto"
+      --          end
+      --       },
+      --       lualine_z = {
+      --          'hostname'
+      --       }
+      --    }
+      -- })
    end
 }
