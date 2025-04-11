@@ -1,4 +1,4 @@
 #!/bin/bash
 
 choice=$(printf "HEX\\nRGB\\nhex\\nHEX!\\nhex!\\nplain\\nrgb" | dmenu -i -p "Select format")
-xcolor -s -f "$choice" && dunstify -t 700 "Valor $choice copiado 
+xcolor -s -f "$choice" && dunstify -t 700 "Valor $choice copiado"

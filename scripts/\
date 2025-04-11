@@ -1,0 +1,17 @@
+#!/bin/sh
+
+status=$(playerctl status)
+
+if [[ "$status" = "Playing" ]]; then
+   artist=$(playerctl metadata -a --format "{{ artist }}")
+   title=$(playerctl metadata -a --format "{{ title }}")
+   total_duration=$(
+      playerctl metadata --format "Total length: {{ duration(mpris:length) }}"
+   )
+   current_position=$(
+      playerctl metadata --format "Total length: {{ duration(position) }}"
+   )
+   echo "$artist - $title"
+else
+   echo "Nothing playing..."
+fi
