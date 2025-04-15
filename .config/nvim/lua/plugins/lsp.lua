@@ -30,6 +30,7 @@ return {
 
         require('lspconfig').nixd.setup({})
         require('lspconfig').bashls.setup({})
+        require('lspconfig').clangd.setup({})
         require("mason").setup()
         require("mason-lspconfig").setup()
 

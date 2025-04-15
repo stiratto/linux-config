@@ -24,6 +24,6 @@ vim.o.background = 'dark'
 vim.opt.termguicolors = true
 -- vim.cmd 'colorscheme fogbell_lite'
 -- vim.cmd 'colorscheme 256_noir'
-vim.cmd 'colorscheme kanagawa-dragon'
--- vim.cmd 'colorscheme colorbuddy'
+-- vim.cmd 'colorscheme kanagawa-dragon'
+vim.cmd 'colorscheme plain'
 vim.api.nvim_set_hl(0, 'FloatBorder', { link = 'Normal' }) -- line to fix de background color border

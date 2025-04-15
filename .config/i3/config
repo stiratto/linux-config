@@ -242,7 +242,7 @@ bar {
         }
 
         # position top
-        mode hide
+        # mode hide
 }
 
 
