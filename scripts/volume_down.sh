@@ -13,4 +13,4 @@ else
 fi
 
 # Muestra la notificación con Dunst
-dunstify -a "changeVolume" -t 700 -h string:x-dunst-stack-tag:myvolume -h int:value:"$volume" "Volume: $volume% " 2>/tmp/dunst_error.log
+dunstify -a "changeVolume" -t 700 -h string:x-dunst-stack-tag:myvolume "Volume: $volume% " 2>/tmp/dunst_error.log
