@@ -3,8 +3,7 @@
 echo $DISPLAY
 export DISPLAY=:0
 
-pkill -x .polybar-wrappe 
-
+killall polybar
 
 # Terminate already running bar instances
 # Launch Polybar, using default config location ~/.config/polybar/config.ini
