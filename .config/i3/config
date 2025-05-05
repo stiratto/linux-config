@@ -68,7 +68,8 @@ bindsym $mod+M exec $SCRIPTS_HOME/launch_polybar.sh
 bindsym $mod+N exec $SCRIPTS_HOME/screenshotter
 bindsym $mod+X exec $SCRIPTS_HOME/dmenurecord
 bindsym $mod+b exec "$SCRIPTS_HOME/pickcolor"
-bindsym $mod+Return exec alacritty 
+bindsym $mod+Return exec wezterm 
+# bindsym $mod+Return exec wezterm 
 # bindsym $mod+d exec --no-startup-id rofi -modi drun -show drun \
 		# -config ~/.config/rofi/rofidmenu.rasi
 
@@ -232,12 +233,10 @@ bar {
         colors {
                 focused_workspace  #202020 #4d4d4d00 #ffffff
                 inactive_workspace #202020 #101010 #4d4d4d
-
-
         }
 
         # position top
-        # mode hide
+        mode hide
 }
 
 
