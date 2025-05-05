@@ -49,7 +49,7 @@ font pango:JetBrainsMono Nerd Font 8
 ############### STARTUP EXEC ################
 
 exec --no-startup-id dex --autostart --environment i3
-exec_always feh --bg-scale ~/Images/wallpapers/wallhaven-0q8vqr.jpg
+exec_always feh --bg-scale ~/Images/wallpapers/wp.png
 exec_always $SCRIPTS_HOME/keyboardrate
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
@@ -68,7 +68,7 @@ bindsym $mod+M exec $SCRIPTS_HOME/launch_polybar.sh
 bindsym $mod+N exec $SCRIPTS_HOME/screenshotter
 bindsym $mod+X exec $SCRIPTS_HOME/dmenurecord
 bindsym $mod+b exec "$SCRIPTS_HOME/pickcolor"
-bindsym $mod+Return exec wezterm 
+bindsym $mod+Return exec st 
 # bindsym $mod+Return exec wezterm 
 # bindsym $mod+d exec --no-startup-id rofi -modi drun -show drun \
 		# -config ~/.config/rofi/rofidmenu.rasi
@@ -95,6 +95,8 @@ mode "$mode_gaps" {
 
 }
 
+
+# alacritty opacity
 bindsym Control+Shift+Down exec perl -i -pe 's/(opacity = )([0-1]?.?[0-9]+)/if ($2>0) {$1.($2-0.025)} else {$1.$2}/e'  ~/.config/alacritty/alacritty.toml
 bindsym Control+Shift+Up exec perl -i -pe 's/(opacity = )([0-1]?.?\d+)/if ($2<1) {$1.($2+0.025)} else {$1.$2}/e' ~/.config/alacritty/alacritty.toml
 
