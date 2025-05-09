@@ -28,7 +28,7 @@ set $SCRIPTS_HOME $HOME/.local/share/scripts
 
 # window titles style
 # state                    border              background          text                 indicator
-client.focused             $color-dark-gray    #025478             $color-white         $color-medium-gray
+client.focused             $color-dark-gray    #151B20             $color-white         $color-medium-gray
 client.focused_inactive    $color-black        $color-black        $color-medium-gray   $color-black
 client.unfocused           $color-black        $color-black        $color-dark-gray     $color-black
 client.urgent              $color-alert        $color-alert        $color-black         $color-black
@@ -49,7 +49,9 @@ font pango:JetBrainsMono Nerd Font 8
 ############### STARTUP EXEC ################
 
 exec --no-startup-id dex --autostart --environment i3
-exec_always feh --bg-scale ~/Images/wallpapers/wp.png
+exec_always feh --bg-scale ~/Images/wallpapers/andre-benz-JBkwaYMuhdc-unsplash.jpg
+
+
 exec_always $SCRIPTS_HOME/keyboardrate
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
