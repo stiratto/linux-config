@@ -28,9 +28,9 @@ set $SCRIPTS_HOME $HOME/.local/share/scripts
 
 # window titles style
 # state                    border              background          text                 indicator
-client.focused             $color-dark-gray    #151B20             $color-white         $color-medium-gray
+client.focused             $color-dark-gray    #5B5C5D $color-white         $color-medium-gray
 client.focused_inactive    $color-black        $color-black        $color-medium-gray   $color-black
-client.unfocused           $color-black        $color-black        $color-dark-gray     $color-black
+client.unfocused           $color-black        #000000ff        $color-dark-gray     $color-black
 client.urgent              $color-alert        $color-alert        $color-black         $color-black
 client.placeholder         $color-black        $color-black        $color-white         $color-black
 client.background          $color-black
@@ -38,8 +38,14 @@ client.background          $color-black
 gaps outer 0
 gaps inner 2
 
+hide_edge_borders none
+
+
+
 
 for_window [class="^.*"] border pixel $borderwidth
+
+
 
 
 # Font for window titles. Will also be used by the bar unless a different font
@@ -49,7 +55,7 @@ font pango:JetBrainsMono Nerd Font 8
 ############### STARTUP EXEC ################
 
 exec --no-startup-id dex --autostart --environment i3
-exec_always feh --bg-scale ~/Images/wallpapers/andre-benz-JBkwaYMuhdc-unsplash.jpg
+exec_always feh --bg-scale ~/Images/wallpapers/green-fibers.png
 
 
 exec_always $SCRIPTS_HOME/keyboardrate
@@ -58,6 +64,7 @@ exec --no-startup-id nm-applet
 
 
 for_window [title="music-player"] floating enable
+for_window [title="nsxiv"] floating enable
 floating_modifier $mod
 tiling_drag modifier titlebar
 
@@ -66,11 +73,15 @@ tiling_drag modifier titlebar
 
 ################################## BYNDSIMS ################################## 
 
-bindsym $mod+M exec $SCRIPTS_HOME/launch_polybar.sh
+bindsym $mod+Ctrl+M exec $SCRIPTS_HOME/launch_polybar.sh
+bindsym $mod+Ctrl+G exec $SCRIPTS_HOME/reload_xborders
+bindsym $mod+Ctrl+W exec $SCRIPTS_HOME/wallpapermenu
+bindsym $mod+Ctrl+T exec $SCRIPTS_HOME/clock
 bindsym $mod+N exec $SCRIPTS_HOME/screenshotter
 bindsym $mod+X exec $SCRIPTS_HOME/dmenurecord
 bindsym $mod+b exec "$SCRIPTS_HOME/pickcolor"
-bindsym $mod+Return exec st 
+# bindsym $mod+Return exec kitty
+bindsym $mod+Return exec st
 # bindsym $mod+Return exec wezterm 
 # bindsym $mod+d exec --no-startup-id rofi -modi drun -show drun \
 		# -config ~/.config/rofi/rofidmenu.rasi

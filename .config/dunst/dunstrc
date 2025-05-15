@@ -5,10 +5,10 @@ geometry = "300x60-20+48"
 indicate_hidden = yes
 shrink = no
 separator_height = 0
-padding = 32
+padding = 24 
 horizontal_padding = 32
-frame_width = 1
-corner_radius = 8
+frame_width = 3
+corner_radius = 0
 sort = no
 idle_threshold = 120 
 font = FiraCode Nerd Font 8 
@@ -37,18 +37,18 @@ context = ctrl+shift+period
 
 [urgency_low]
 timeout = 4
-background = "#000000"
+background = "#1E1E1E"
 foreground = "#ffffff"
-frame_color = "#424242"
+frame_color = "#ffffff"
 
 [urgency_normal]
 timeout = 8
-background = "#000000"
+background = "#1E1E1E"
 foreground = "#ffffff"
-frame_color = "#424242"
+frame_color = "#ffffff"
 
 [urgency_critical]
 timeout = 0
-background = "#000000"
+background = "#1E1E1E"
 foreground = "#ffffff"
-frame_color = "#424242"
+frame_color = "#ffffff"
