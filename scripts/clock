@@ -1,0 +1,5 @@
+#!/bin/bash
+
+date=$(date +"%a %d %b %Y - %T")
+
+dunstify -t 5000 -h string:x-dunst-stack-tag:date "$date"
