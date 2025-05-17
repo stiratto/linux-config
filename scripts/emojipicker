@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# read the file with all emojis
+# display each emoji in a single row in dmenu
+# when item gets chosen, copy emoji to clipboard
+
+CHOICE=$(while read -r line; do 
+   echo "$line"  
+done < "$HOME/.local/share/scripts/emojis" | dmenu -l 15 -i -bw 1)
+
+echo $CHOICE | awk '{print $1}' | xsel --input --clipboard
+
