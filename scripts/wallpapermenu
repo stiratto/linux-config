@@ -14,8 +14,8 @@ menu () {
 	fi
 
 	case $CHOICE in
-		Random) wal -i "$FOLDER" ;; # dmenu random option
-		*.*) wal -i "$CHOICE" ;;
+		Random) feh --bg-scale "$FOLDER" ;; # dmenu random option
+		*.*) feh --bg-scale  "$CHOICE" ;;
 		*) exit 0 ;;
 	esac
 }
