@@ -1,8 +1,13 @@
 -- Cargar plugins
+vim.opt.termguicolors = true
+
 require("config.lazy")
-require('nvim-navic').setup()
-require("colorizer").setup()
-require("extra")
+
+vim.cmd 'syntax on'
+require('extra')
+local changeTheme = require("scripts.changeTheme")
+changeTheme.readTheme()
+
 
 vim.api.nvim_create_augroup('transparent_signs', { clear = true })
 vim.api.nvim_create_autocmd('ColorScheme', {
@@ -12,18 +17,8 @@ vim.api.nvim_create_autocmd('ColorScheme', {
    end,
 })
 
-vim.api.nvim_create_user_command('RunScript', function()
-   vim.cmd('!bash %')
-end, {})
-
 
 
 -- Cargar remapeos de teclas
-vim.cmd("luafile ~/.config/nvim/lua/remap.lua")
+vim.cmd("luafile " .. vim.fn.stdpath("config") .. "/lua/remap.lua")
 vim.o.background = 'dark'
-vim.opt.termguicolors = true
--- vim.cmd 'colorscheme fogbell_lite'
--- vim.cmd 'colorscheme 256_noir'
--- vim.cmd 'colorscheme kanagawa-dragon'
-vim.cmd 'colorscheme plain'
-vim.api.nvim_set_hl(0, 'FloatBorder', { link = 'Normal' }) -- line to fix de background color border

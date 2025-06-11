@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 # slightly scuffed wallpaper picker menu for use with pywal - uses nsxiv if installed, otherwise uses dmenu
 
@@ -9,14 +9,21 @@ SCRIPT=~/scripts/pywal16 # script to run after wal for refreshing programs, etc.
 menu () {
 	if command -v nsxiv >/dev/null; then 
 		CHOICE=$(nsxiv -otb $FOLDER/*)
+		MODE=$(echo -e "center\ntile\nscale" | dmenu -l 15)
 	else 
 		CHOICE=$(echo -e "Random\n$(command ls -v $FOLDER)" | dmenu -l 15 -i -p "Wallpaper: ")
 	fi
 
+	
 	case $CHOICE in
-		Random) feh --bg-scale "$FOLDER" ;; # dmenu random option
-		*.*) feh --bg-scale  "$CHOICE" ;;
-		*) exit 0 ;;
+		Random) feh --bg-center "$FOLDER" ;; # dmenu random option
+		*.*)
+			
+			ESCAPED_CHOICE=$(echo "$CHOICE" | sed 's/\//\\\//g')
+
+			feh --bg-"$MODE" "$CHOICE" && perl -i -pe 's/^exec_always feh --bg-(center|tile|scale|fill|max) .*/exec_always feh --bg-'"$MODE"' "'"$ESCAPED_CHOICE"'"/' ~/.config/i3/config;;
+
+		*) exit 1 ;;
 	esac
 }
 

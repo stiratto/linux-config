@@ -1,0 +1,19 @@
+#!/bin/bash
+cd ~/projects/nyctara/
+session="nyctara"
+tmux new-session -d -s $session
+tmux rename-window -t $session client
+tmux send-keys -t $session "cd client && clear" ENTER
+
+tmux new-window -t $session
+tmux rename-window -t $session server
+tmux send-keys -t $session "cd server && clear" ENTER
+
+# initialize client and servers
+tmux new-window -t $session
+tmux rename-window -t $session client-server
+tmux split-window -h -t $session
+tmux send-keys -t $session.0 "cd client && pnpm dev" ENTER
+tmux send-keys -t $session.1 "cd server && pnpm start:dev" ENTER
+
+tmux a -t nyctara

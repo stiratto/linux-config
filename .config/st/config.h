@@ -5,11 +5,26 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font =
-    "Iosevka Nerd Font:pixelsize=20:antialias=true:autohint=true";
+// static char *font =
+//     "Perfect Dos VGA 437 Win:pixelsize=20:antialias=true:autohint=true";
+// static char *font =
+//     "Iosevka Nerd Font:pixelsize=20:antialias=true:autohint=true";
+// static char *font = "Cozette:pixelsize=8:antialias=false:autohint=false";
+// static char *font = "terminus:pixelsize=15:antialias=false:autohint=false";
+static char *font = "Spleen 8x16:pixelsize=15:antialias=true:autohint=true";
+// static char *font = "CodeNewRoman Nerd "
+                    // "Font:pixelsize=15:antialias=true:autohint=true:style=bold";
+                    //
+// static char *font = "Greybeard 22px:pixelsize=22:antialias=true:autohint=true:style=bold";
+// static char *font = "Iosevka Nerd Font:pixelsize=22:antialias=true:autohint=true:style=bold";
+// static char *font = "consolas:pixelsize=15:antialias=true:autohint=true";
+// static char *font =
+//     "BlexMono Nerd Font:pixelsize=15:antialias=true:autohint=true";
+// static char *font = "Tamzen:pixelsize=15:antialias=false:autohint=false";
+
 static char *font2[] = {
     "NotoColorEmoji:pixelsize=10:antialias=true:autohint=true"};
-static int borderpx = 2;
+static int borderpx = 10;
 
 typedef struct {
   uint32_t button; // el botón del mouse
@@ -126,7 +141,7 @@ static const char *colorname[] = {
     [15] = "#fdf6e3", /* white   */
 
     /* special colors */
-    [256] = "#1f1d1b", /* background */
+    [256] = "#000000", /* background */
     [257] = "#ffffff", /* foreground */
 };
 
