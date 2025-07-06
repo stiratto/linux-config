@@ -1,1 +1,0 @@
-return { 'xero/blaquemagick.vim' }

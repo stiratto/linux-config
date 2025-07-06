@@ -4,28 +4,41 @@ return {
     "neovim/nvim-lspconfig",
     config = function()
         local capabilities = require("cmp_nvim_lsp").default_capabilities()
-        -- require('java').setup()
 
         local on_attach = function(client, bufnr)
             vim.api.nvim_create_autocmd("BufWritePre", {
                 buffer = bufnr,
                 callback = function()
-                    vim.lsp.buf.format({
-                        async = true,
-                        bufnr = bufnr,
-                    })
+                    vim.lsp.buf.format({async = false})
                 end
             })
         end
 
-        require('lspconfig').jdtls.setup({
-            cmd = { "/home/stiratto/.local/bin/java" }
+
+
+        local lspconfig = require("lspconfig")
+        require("mason").setup()
+
+        lspconfig.ts_ls.setup({
+            capabilities = capabilities,
+            on_attach = on_attach
+        })
+        lspconfig.clangd.setup({
+            capabilities = capabilities,
+            on_attach = on_attach
         })
 
+        lspconfig.astro.setup({
+            init_options = {
+              typescript = {
+                tsdk = "/home/stiratto/.local/share/pnpm/global/5/node_modules/typescript/lib", 
+              },
+            },
+            capabilities = capabilities,
+            on_attach = on_attach
 
-        -- require('lspconfig').jdtls.setup({})
-        require("mason").setup()
-        require("mason-lspconfig").setup()
+        })
+
 
     end
 }

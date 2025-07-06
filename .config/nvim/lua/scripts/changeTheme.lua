@@ -1,4 +1,3 @@
-
 local M = {}
 
 function M.readTheme()
@@ -25,8 +24,8 @@ function M.setTheme(mode)
       vim.cmd("colorscheme fogbell")
       file:write("colorscheme fogbell")
     elseif mode == "light" then
-      vim.cmd("colorscheme OceanicNextLight")
-      file:write("colorscheme OceanicNextLight")
+      vim.cmd("colorscheme fogbell_light ")
+      file:write("colorscheme fogbell_light")
     else
       print("Wrong mode, either dark | light")
     end
@@ -40,7 +39,6 @@ vim.api.nvim_create_user_command("SetTheme", function (table)
     return
   end
   local argf = table.fargs[1]
-  print(argf)
   M.setTheme(argf)
 end, {nargs =  "+"})
 

@@ -12,12 +12,12 @@ static const char *prompt =
     NULL; /* -p  option; prompt to the left of input field */
 static const char *colors[SchemeLast][3] = {
     /*     fg         bg      border */
-    [SchemeNorm] = {"#bbbbbb", "#1C1C1C", "#333333"},
-    [SchemeSel] = {"#eeeeee", "#005577", "#ffffff"},
-    [SchemeOut] = {"#000000", "#00ffff", "#333333"},
+    [SchemeNorm] = {"#bbbbbb", "#1C1C1C", "#BFCAFE"},
+    [SchemeSel] = {"#eeeeee", "#005577", "#BFCAFE"},
+    [SchemeOut] = {"#000000", "#00ffff", "#BFCAFE"},
 };
 /* -l option; if nonzero, dmenu uses vertical list with given number of lines */
-static unsigned int lines = 0;
+static unsigned int lines = 20;
 
 /*
  * Characters not considered part of a word while deleting words
@@ -26,4 +26,4 @@ static unsigned int lines = 0;
 static const char worddelimiters[] = " ";
 
 /* Size of the window border */
-static unsigned int border_width = 4;
+static unsigned int border_width = 0;

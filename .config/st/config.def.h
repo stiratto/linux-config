@@ -11,20 +11,33 @@
 //     "Iosevka Nerd Font:pixelsize=20:antialias=true:autohint=true";
 // static char *font = "Cozette:pixelsize=8:antialias=false:autohint=false";
 // static char *font = "terminus:pixelsize=15:antialias=false:autohint=false";
-static char *font = "Spleen 8x16:pixelsize=15:antialias=true:autohint=true";
-// static char *font = "CodeNewRoman Nerd "
-                    // "Font:pixelsize=15:antialias=true:autohint=true:style=bold";
-                    //
-// static char *font = "Greybeard 22px:pixelsize=22:antialias=true:autohint=true:style=bold";
-// static char *font = "Iosevka Nerd Font:pixelsize=22:antialias=true:autohint=true:style=bold";
-// static char *font = "consolas:pixelsize=15:antialias=true:autohint=true";
 // static char *font =
-//     "BlexMono Nerd Font:pixelsize=15:antialias=true:autohint=true";
-// static char *font = "Tamzen:pixelsize=15:antialias=false:autohint=false";
+//     "Ellograph CF:pixelsize=15:antialias=true:autohint=true:style=bold";
+
+// static char *font = "Spleen 8x16:pixelsize=15:antialias=true:autohint=true";
+
+// char *font = "CodeNewRoman Nerd "
+//              "Font:pixelsize=15:antialias=true:autohint=true:style=bold";
+// char *font = "Hack Nerd "
+//              "Font:pixelsize=15:antialias=true:autohint=true:style=bold";
+// char *font =
+//     "Maple Mono NL:pixelsize=15:antialias=true:autohint=true:style=bold";
+//
+// static char *font = "Greybeard
+// 22px:pixelsize=22:antialias=false:autohint=false"; static char *font =
+// "Monaspace Neon:pixelsize=22:antialias=true:autohint=true:style=bold";
+// static char *font = "consolas:pixelsize=15:antialias=true:autohint=true";
+
+// static char *font =
+//     "BlexMono Nerd
+//     Font:pixelsize=15:antialias=true:autohint=true:style=bold";
+static char *font = "Tamzen:pixelsize=15:antialias=false:autohint=false";
+// static char *font =
+// "Monospace:pixelsize=15:antialias=true:autohint=true";
 
 static char *font2[] = {
     "NotoColorEmoji:pixelsize=10:antialias=true:autohint=true"};
-static int borderpx = 10;
+static int borderpx = 0;
 
 typedef struct {
   uint32_t button; // el botón del mouse

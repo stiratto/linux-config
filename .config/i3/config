@@ -28,9 +28,9 @@ set $SCRIPTS_HOME $HOME/.local/share/scripts
 
 # window titles style
 # state                    border              background          text                 indicator
-client.focused             $color-dark-gray    #64639C  $color-white #64639C
+client.focused             $color-dark-gray    #93A79D  $color-white #93A79D
 client.focused_inactive    $color-black        $color-black        $color-medium-gray   $color-black
-client.unfocused           $color-black        #AFB3C2         $color-dark-gray     $color-black
+client.unfocused           $color-black        #181818         $color-dark-gray     $color-black
 client.urgent              $color-alert        $color-alert        $color-black         $color-black
 client.placeholder         $color-black        $color-black        $color-white         $color-black
 client.background          $color-black
@@ -64,6 +64,7 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
 
 
+
 for_window [title="music-player"] floating enable
 for_window [title="nsxiv"] floating enable
 for_window [title="sway-launcher-desktop"] floating enable
@@ -83,10 +84,10 @@ bindsym $mod+N exec $SCRIPTS_HOME/screenshotter
 bindsym $mod+X exec $SCRIPTS_HOME/dmenurecord
 bindsym $mod+b exec "$SCRIPTS_HOME/pickcolor"
 bindsym $mod+Shift+T exec $SCRIPTS_HOME/emojipicker
-bindsym $mod+d exec st -e sway-launcher-desktop
-# bindsym $mod+d exec --no-startup-id dmenu_run
-# exec_always feh --bg-scale "/home/stiratto/Images/wallpapers//1.jpg"
-exec_always hsetroot -solid '#707F91'
+bindsym $mod+d exec dmenu_run
+exec_always xrdb -merge ~/Hellfire.Xresources
+# exec_always feh --bg-tile "/home/stiratto/Images/wallpapers//noise_tile.png"
+exec_always xsetroot -solid '#373533'
 
 
 # bindsym $mod+Return exec kitty
